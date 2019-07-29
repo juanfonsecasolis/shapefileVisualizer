@@ -1,15 +1,15 @@
 Shapefile visualizer
 ===========================================================================================
-App for Android for shapefile visualization.
+Android application for visualizing shapefiles.
 
 Author
 -------
-2019 Juan Manuel Fonseca-Solís, ESRI
+2019 Juan Manuel Fonseca-Solís, code modified from ESRI
 
 Package Description
 ---
-This package allows you to visualize shapefiles onto your mobile phone. For sample purposes, a shapefile with the districts of Costa Rica from is provided [1]. 
-The shapefile can be modified by changing the path on the "shapefile_path" string located on the strings.xml file. Before compiling and launching the app, you would need to copy the mentioned shapefile to the device using the following commands:
+This package allows you to visualize shapefiles onto your mobile phone. For sample purposes, a shapefile with the districts of Costa Rica is provided [1]. 
+The shapefile can be personalized with your own by changing the path on the "shapefile_path" string located on the strings.xml file. Before compiling and launching the app, you would need to copy the mentioned shapefile to the device using the following commands:
 ```
 cd Distritos_de_Costa_Rica
 adb push . /sdcard/ArcGIS/Samples/ShapeFile/Distritos_de_Costa_Rica/
