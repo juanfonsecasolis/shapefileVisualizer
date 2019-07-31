@@ -9,4 +9,5 @@
     <string name="read_permission_denied">
 GeoPackage could not be opened because READ permission was denied.
     </string>
+    <string name="aboutTitle">Credits</string>
 </resources>

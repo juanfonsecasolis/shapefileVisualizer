@@ -19,6 +19,9 @@
 
 package com.example.shapefilevisualizer;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.Manifest;
@@ -37,12 +40,16 @@ import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
 import com.esri.arcgisruntime.mapping.Viewpoint;
 import com.esri.arcgisruntime.mapping.view.MapView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.content.res.Resources;
 
 public class MainActivity extends AppCompatActivity {
 
     private final static String TAG = MainActivity.class.getSimpleName();
 
     private MapView mMapView;
+    private static final int MENU_ABOUT = Menu.FIRST;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +62,48 @@ public class MainActivity extends AppCompatActivity {
         mMapView.setMap(map);
 
         requestReadPermission();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Resources resources = getApplicationContext().getResources();
+        menu.add(Menu.NONE, MENU_ABOUT, Menu.NONE, resources.getString(R.string.aboutTitle));
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_ABOUT:
+                startAboutActivity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // https://stackoverflow.com/questions/2115758/how-do-i-display-an-alert-dialog-on-android
+    private void startAboutActivity() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                if (!isFinishing()){
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Credits")
+                            .setMessage("2019 Juan M. Fonseca-Solis\nWebsite: https://juanfonsecasolis.github.io\n\n" +
+                                    "Based on the code offered by ESRI and the shapefile offered by Portal de datos abiertos (http://daticos-geotec.opendata.arcgis.com/datasets/741bdd9fa2ca4d8fbf1c7fe945f8c916_0).")
+                            .setCancelable(false)
+                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Whatever...
+                                }
+                            }).show();
+                }
+            }
+        });
     }
 
     /**
