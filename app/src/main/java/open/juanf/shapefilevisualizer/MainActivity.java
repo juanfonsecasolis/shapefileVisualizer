@@ -1,4 +1,5 @@
-/* Copyright 2018 Esri
+/* Copyright 2019 Juan Fonseca-Solis
+ * Copyright 2018 Esri
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Modififed by Juan Fonseca-Solis on 2019 to load the shapefiles of the districts on Costa Rica, 
- * changed license to GNU General Public License v3.0 by Apache compatibility. 
+ * This file has been modified by Juan Fonseca-Solis to incorporate a menu bar, load the
+ * shapefiles from the APK instead of manually copying them from console, and load a shapefile
+ * containing data from Portal de datos abiertos: Cantones de Costa Rica
+ * (http://daticos-geotec.opendata.arcgis.com/datasets/741bdd9fa2ca4d8fbf1c7fe945f8c916_0)
  * 
  */
 
@@ -64,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
         // create a new map to display in the map view with a streets basemap
         mMapView = findViewById(R.id.mapView);
-        ArcGISMap map = new ArcGISMap(Basemap.createStreetsVector());
+        //ArcGISMap map = new ArcGISMap(Basemap.createStreetsVector());
+        ArcGISMap map = new ArcGISMap();
         mMapView.setMap(map);
 
         requestReadWritePermission();
@@ -117,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     new AlertDialog.Builder(MainActivity.this)
                             .setTitle("Credits")
                             .setMessage("(C) 2019 Juan M. Fonseca-Solis\nWebsite: https://juanfonsecasolis.github.io\n\n" +
-                                    "Based on the code offered by ESRI and the shapefile offered by 'Portal de datos abiertos' (http://daticos-geotec.opendata.arcgis.com/datasets/741bdd9fa2ca4d8fbf1c7fe945f8c916_0).")
+                                    "Built using the ArcGISMap Runtime SDK and data from 'Portal de datos abiertos, Cantones de Costa Rica' (http://daticos-geotec.opendata.arcgis.com/datasets/741bdd9fa2ca4d8fbf1c7fe945f8c916_0).")
                             .setCancelable(false)
                             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                 @Override
