@@ -1,13 +1,8 @@
 <resources>
     <string name="app_name">ShapefileVisualizer</string>
-    <!--string name="shapefile_path">
-/ArcGIS/Samples/ShapeFile/Aurora_CO_shp/Public_Art.shp
-</string-->
-    <string name="shapefile_path">
-/ArcGIS/Samples/ShapeFile/Cantones_de_Costa_Rica/Cantones_de_Costa_Rica.shp
-</string>
     <string name="read_permission_denied">
 GeoPackage could not be opened because READ permission was denied.
     </string>
     <string name="aboutTitle">Credits</string>
+    <string name="shapefile_name">cantones_de_costa_rica</string>
 </resources>
