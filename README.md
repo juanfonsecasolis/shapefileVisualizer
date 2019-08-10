@@ -2,7 +2,7 @@ Shapefile visualizer
 ===========================================================================================
 Android application for visualizing shapefiles.
 
-![](demo.png)
+![](demo.png =32x57)
 
 Authors
 ---
