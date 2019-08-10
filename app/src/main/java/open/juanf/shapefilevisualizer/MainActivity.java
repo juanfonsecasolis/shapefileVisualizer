@@ -12,9 +12,9 @@
  * General Public License for more details.  
  *  
  * You should have received a copy of the GNU General Public License  
- * along with this program.  If not, see .  
+ * along with this program.  If not, see https://www.gnu.org/licenses/gpl-3.0.en.html.  
  * 
- * Changes: incorporated a menu bar and the functionality to load a shapefiles from
+ * CHANGES: incorporated a menu bar and the functionality to load a shapefiles from
  * the APK instead of manually copying them from console. The offered shapefile was 
  * taken from Portal de datos abiertos: Cantones de Costa Rica
  * (http://daticos-geotec.opendata.arcgis.com/datasets/741bdd9fa2ca4d8fbf1c7fe945f8c916_0)
