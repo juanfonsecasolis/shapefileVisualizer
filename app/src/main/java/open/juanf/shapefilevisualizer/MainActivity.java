@@ -1,5 +1,5 @@
-/* Copyright 2019 Juan Fonseca-Solis
- * Copyright 2018 Esri
+/* Copyright 2019 Juan Fonseca-Solis (https://github.com/juanfonsecasolis/shapefileVisualizer)
+ * Copyright 2018 ESRI
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  * This file has been modified by Juan Fonseca-Solis to incorporate a menu bar, load the
- * shapefiles from the APK instead of manually copying them from console, and load a shapefile
- * containing data from Portal de datos abiertos: Cantones de Costa Rica
+ * shapefiles from the APK instead of manually copying them from console, and present a demo
+ * of a shapefile containing data from Portal de datos abiertos: Cantones de Costa Rica
  * (http://daticos-geotec.opendata.arcgis.com/datasets/741bdd9fa2ca4d8fbf1c7fe945f8c916_0)
  * 
  */
@@ -179,11 +179,8 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.READ_EXTERNAL_STORAGE };
         int requestCode = 2; // 2
         // For API level 23+ request permission at runtime
-
-        int permission1 = ContextCompat.checkSelfPermission(MainActivity.this, reqPermission[0]);
-        int permission2 = ContextCompat.checkSelfPermission(MainActivity.this, reqPermission[1]);
-
-        if (permission1 == PackageManager.PERMISSION_GRANTED && permission2 == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(MainActivity.this, reqPermission[0]) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(MainActivity.this, reqPermission[1]) == PackageManager.PERMISSION_GRANTED) {
             featureLayerShapefile();
         } else {
             // request permission
