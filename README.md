@@ -15,7 +15,7 @@ References
 
 Demo
 ---
-You can download a demo APK from https://play.google.com/store/apps/details?id=open.juanf.shapefilevisualizer.
+You can see the application up and running by going to https://play.google.com/store/apps/details?id=open.juanf.shapefilevisualizer.
 
 License
 ---
